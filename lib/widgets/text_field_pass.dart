@@ -11,7 +11,7 @@ class TextFieldpass extends StatefulWidget {
 
 class _TextFieldpassState extends State<TextFieldpass> {
   bool _obscureText = true;
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   // final TextEditingController emailcontroller =TextEditingController();
@@ -20,7 +20,7 @@ class _TextFieldpassState extends State<TextFieldpass> {
   Widget build(BuildContext context) {
     return  Center(
       child: TextFormField(
-          controller: _passwordController,
+          controller: passwordController,
 
           obscureText: _obscureText ,
           decoration: InputDecoration(suffixIcon: IconButton(

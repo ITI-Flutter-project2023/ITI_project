@@ -1,9 +1,12 @@
 //import 'dart:js_util';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:iti_flutter_project/widgets/buttons.dart';
 import 'package:iti_flutter_project/widgets/text_field_email.dart';
 import 'package:iti_flutter_project/widgets/text_field_pass.dart';
+
+import 'homelayout.dart';
 
 class Sign_up extends StatefulWidget {
   const Sign_up({super.key});
@@ -13,9 +16,10 @@ class Sign_up extends StatefulWidget {
 }
 
 class _Sign_upState extends State<Sign_up> {
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
   bool _obscureText = true;
 
   final _formKey = GlobalKey<FormState>();
@@ -86,16 +90,27 @@ class _Sign_upState extends State<Sign_up> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
-                    child: Text_field(
-                      text: "  E-mail ",
-                      valid: "@gmail.com",
-                      message: 'Not valid e-mail',
+                    child: TextFormField(
+                        controller: emailController,
+                        decoration:
+                        InputDecoration(labelText:"  Email",
+                          labelStyle:TextStyle(fontSize:30,fontWeight: FontWeight.bold),
+                          border: OutlineInputBorder(  borderRadius: BorderRadius.circular(20.0)),
+                        ),
+                        validator: (value){
+                          if (value!.contains("@gmail.com")){
+                            return null;
+                          }
+                          else{
+                            return "not valid e-mail";
+                          }
+                        }
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
-                        controller: _passwordController,
+                        controller: passwordController,
                         obscureText: _obscureText,
                         decoration: InputDecoration(
                           suffixIcon: IconButton(
@@ -145,7 +160,7 @@ class _Sign_upState extends State<Sign_up> {
                             borderRadius: BorderRadius.circular(20.0)),
                       ),
                       validator: (value) {
-                        if (value != _passwordController.text) {
+                        if (value != passwordController.text) {
                           return 'Passwords do not match';
                         }
                         return null;
@@ -154,7 +169,14 @@ class _Sign_upState extends State<Sign_up> {
                   ),
                   InkWell(
                     onTap: () {
-                      _formKey.currentState!.validate();
+                      if(_formKey.currentState!.validate()){
+                        FirebaseAuth.instance.createUserWithEmailAndPassword(
+                            email: emailController.text,
+                            password: passwordController.text);
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>
+                              homelayout()),);
+                      };
                     },
                     child: Buttons(
                       button_text: "Sign up",
