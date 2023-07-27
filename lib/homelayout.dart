@@ -8,7 +8,9 @@ import 'package:iti_flutter_project/newtask.dart';
 
 // ignore: camel_case_types
 class homelayout extends StatefulWidget {
-  const homelayout({Key? key}) : super(key: key);
+  final String email;
+  const homelayout({super.key, required this.email});
+  // const homelayout({Key? key}) : super(key: key);
   @override
   State<homelayout> createState() => _homelayoutState();
 }
@@ -20,7 +22,7 @@ class _homelayoutState extends State<homelayout> {
   List<Widget> screens = [
     const FirestoreImageDisplay(),
     const types_app(),
-    const newtaskscreen(),
+    const ShowEmail(),
   ];
   List<String> titles = ['new taskes', 'new taskes', 'new taskes'];
   @override

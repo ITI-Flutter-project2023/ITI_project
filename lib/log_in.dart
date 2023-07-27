@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:iti_flutter_project/homelayout.dart';
 import 'package:iti_flutter_project/sign_up.dart';
 import 'package:iti_flutter_project/widgets/buttons.dart';
-import 'package:iti_flutter_project/widgets/text_field_email.dart';
-import 'package:iti_flutter_project/widgets/text_field_pass.dart';
+// import 'package:iti_flutter_project/widgets/text_field_email.dart';
+// import 'package:iti_flutter_project/widgets/text_field_pass.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -97,11 +98,12 @@ class _LogInState extends State<LogIn> {
                   InkWell(
                     onTap: () async {
                       if(_formKey.currentState!.validate()){
+                        saveEmail(emailController.text);
                         bool log_result = await signinUsingFirebase(emailController.text, passwordController.text);
                         if (log_result==true) {
                           Navigator.push(context,
                             MaterialPageRoute(builder: (context) =>
-                                homelayout()),);
+                                homelayout(email: emailController.text)),);
                         }
                         else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("log in failed")));
@@ -155,4 +157,8 @@ class _LogInState extends State<LogIn> {
       return result;
     }
   }
+  saveEmail(String email) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("email", email);
+}
 }
