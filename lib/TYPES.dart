@@ -8,26 +8,26 @@ class types_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(159, 219, 211, 188),
       body: Center(
         child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(height: 10),
             Container(
                 width: 350,
-                height: 100,
+                height: 75,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 197, 161, 181),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                    color: Color.fromARGB(255, 194, 187, 166),
+                    borderRadius: BorderRadius.circular(30),
+                        
                     border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 134, 160, 170),
+                      width: 2.5,
+                      color: Color.fromARGB(215, 157, 91, 67),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        blurRadius: 5,
+                        spreadRadius: 1,
                       )
                     ]),
                 child: Row(
@@ -36,14 +36,15 @@ class types_app extends StatelessWidget {
                     SizedBox(width: 10),
                     Text(
                       "Jeans",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 85),
+                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                      ),
+                     SizedBox(width: 85),
                     ClipOval(
                       child: Image(
+                        
                         image: AssetImage("assets/js.jpg"),
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 800,
                         fit: BoxFit.cover,
 
                       ),
@@ -55,20 +56,19 @@ class types_app extends StatelessWidget {
             SizedBox(height: 20),
             Container(
                 width: 350,
-                height: 100,
+                height: 75,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 197, 161, 181),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                    color: Color.fromARGB(255, 194, 187, 166),
+                    borderRadius: BorderRadius.circular(30
+                        ),
                     border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 134, 160, 170),
+                      width: 2.5,
+                      color:  Color.fromARGB(215, 157, 91, 67),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        blurRadius: 5,
+                        spreadRadius: 1,
                       )
                     ]),
                 child: Row(
@@ -77,14 +77,14 @@ class types_app extends StatelessWidget {
                     SizedBox(width: 10),
                     Text(
                       "Skirts",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold ,color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                     SizedBox(width: 85),
                     ClipOval(
                       child: Image(
                         image: AssetImage("assets/sk.jpg"),
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -96,20 +96,19 @@ class types_app extends StatelessWidget {
             SizedBox(height: 20),
             Container(
                 width: 350,
-                height: 100,
+                height: 75,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 197, 161, 181),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                    color: Color.fromARGB(255, 194, 187, 166),
+                    borderRadius: BorderRadius.circular(30
+                        ),
                     border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 134, 160, 170),
+                      width: 2.5,
+                      color:  Color.fromARGB(215, 157, 91, 67),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        blurRadius: 5,
+                        spreadRadius: 1,
                       )
                     ]),
                 child: Row(
@@ -118,14 +117,14 @@ class types_app extends StatelessWidget {
                     SizedBox(width: 10),
                     Text(
                       "Bijames",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                     SizedBox(width: 70),
                     ClipOval(
                       child: Image(
                         image: AssetImage("assets/bi_1.jpg"),
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -136,20 +135,19 @@ class types_app extends StatelessWidget {
             SizedBox(height: 20),
             Container(
                 width: 350,
-                height: 100,
+                height: 75,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 197, 161, 181),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                    color: Color.fromARGB(255, 194, 187, 166),
+                    borderRadius: BorderRadius.circular(30
+                        ),
                     border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 134, 160, 170),
+                      width: 2.5,
+                      color: Color.fromARGB(215, 157, 91, 67),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        blurRadius: 5,
+                        spreadRadius: 1,
                       )
                     ]),
                 child: Row(
@@ -158,14 +156,14 @@ class types_app extends StatelessWidget {
                     SizedBox(width: 10),
                     Text(
                       "Jackets",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                     SizedBox(width: 70),
                     ClipOval(
                       child: Image(
                         image: AssetImage("assets/ja.jpg"),
-                        width: 100,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         fit: BoxFit.cover,
                       ),
                     ),

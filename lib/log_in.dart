@@ -26,10 +26,13 @@ class _LogInState extends State<LogIn> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          image: DecorationImage(
+          color: Color.fromARGB(159, 219, 211, 188),
+          
+        
+          /*image: DecorationImage(
             image: AssetImage('assets/background4.jpg'),
             fit: BoxFit.fill,
-          ),
+          ),*/
         ),
         child: Center(
           child: Form(
@@ -42,11 +45,12 @@ class _LogInState extends State<LogIn> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: Text(
-                      "Log in page ",
+                      "Login",
                       style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                   ),
+                  SizedBox(height: 20),
                    Padding(
                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
@@ -54,8 +58,13 @@ class _LogInState extends State<LogIn> {
 
                         decoration:
                         InputDecoration(labelText:"  Email",
-                          labelStyle:TextStyle(fontSize:30,fontWeight: FontWeight.bold),
-                          border: OutlineInputBorder(  borderRadius: BorderRadius.circular(20.0)),
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          fillColor:Colors.white,
+
+                          focusedBorder: OutlineInputBorder( 
+                            borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+                        
+                             borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value){
                           if (value!.contains("@gmail.com")){
@@ -67,6 +76,7 @@ class _LogInState extends State<LogIn> {
                         }
                     ),
                   ),
+                  
                    Padding(
                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
@@ -82,8 +92,10 @@ class _LogInState extends State<LogIn> {
                           },
                         ),
                           labelText:"  Password",
-                          labelStyle:TextStyle(fontSize:30,fontWeight: FontWeight.bold),
-                          border: OutlineInputBorder(  borderRadius: BorderRadius.circular(20.0)),
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          focusedBorder: OutlineInputBorder( 
+                            borderSide:const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+                             borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value){
                           if (value!.length>7){
@@ -110,13 +122,17 @@ class _LogInState extends State<LogIn> {
                         }
                       };
                       },
-                    child: const Buttons(button_text: "Log in",),
+                      
+                      
+                    child: const Buttons(button_text: "Login",),
                   ),
+                  SizedBox(height: 20),
+
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        const Text("Don't have acount?"),
+                        const Text("Don't have acount?",style: TextStyle(color: Color.fromARGB(215, 157, 91, 67)),),
                         InkWell(
                           onTap: () {
                             Navigator.push(
@@ -125,9 +141,10 @@ class _LogInState extends State<LogIn> {
                                   builder: (context) => const Sign_up()),
                             );
                           },
+                          
                           child: const Text(
                             "sign up",
-                            style: TextStyle(color: Colors.blueAccent),
+                            style: TextStyle(color: Color.fromARGB(180, 89, 99, 76),fontSize: 20,fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],

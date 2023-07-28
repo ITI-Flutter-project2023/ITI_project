@@ -11,14 +11,24 @@ class Buttons extends StatefulWidget {
 class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      height: 50, width: 120,
-      decoration: BoxDecoration(color: Colors.lightBlueAccent,
-        borderRadius: BorderRadius.circular(25),border: Border.all(color: Colors.indigo),
-
+    return  Padding(
+      padding: EdgeInsets.only(top: 20),
+      child: Container(
+        
+        height: 45, width: 180,
+        decoration: BoxDecoration(color: Color.fromARGB(215, 157, 91, 67),
+          borderRadius: BorderRadius.circular(28),border: Border.all(color: Color.fromARGB(225, 148, 117, 103)),
+          boxShadow: [BoxShadow(
+            blurRadius: 2,
+            spreadRadius: 1,
+          )]
+    
+        ),
+    
+        child: Center(child: Text(widget.button_text,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Color.fromARGB(159, 219, 211, 188) )),),
+        
       ),
-
-      child: Center(child: Text(widget.button_text,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
     );
+    
   }
 }

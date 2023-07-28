@@ -3,8 +3,10 @@ import 'package:iti_flutter_project/FirestoreImageDisplay.dart';
 // ignore: depend_on_referenced_packages
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:iti_flutter_project/TYPES.dart';
+import 'package:iti_flutter_project/info_app.dart';
 
 import 'package:iti_flutter_project/newtask.dart';
+import 'package:iti_flutter_project/teams.dart';
 
 // ignore: camel_case_types
 class homelayout extends StatefulWidget {
@@ -24,36 +26,53 @@ class _homelayoutState extends State<homelayout> {
     const types_app(),
     const ShowEmail(),
   ];
-  List<String> titles = ['new taskes', 'new taskes', 'new taskes'];
+  List<String> titles = ['', '', ''];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(159, 219, 211, 188),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 81, 144, 160),
+        backgroundColor:Color.fromARGB(159, 219, 211, 188),
+        elevation: 0,
         title: Text(titles[currentindex]),
       ),
       endDrawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
-          children: const <Widget>[
-            DrawerHeader(
+          children:  <Widget>[
+            const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 118, 171, 187),
+                color: Color.fromARGB(159, 219, 211, 188),
               ),
               child: Text('Menu drawer'),
             ),
             ListTile(
               leading: Icon(
-                Icons.home,
-                size: 60,
+                Icons.app_shortcut,
+                size: 50,
               ),
-              title: Text('First item'),
-              subtitle: Text("This is the 1st item"),
-              trailing: Icon(Icons.more_vert),
+              title: Text('APPlication Information'),
+              onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> const Info_App()),);
+              },
+ 
+              
+
+
             ),
             ListTile(
-              title: Text('Second item'),
+              title: Text('Team Name'),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> const Team_name()),);
+              },
+              leading: Icon(
+                Icons.person,
+                size: 50,
+                
+              )
             ),
           ],
         ),
@@ -90,13 +109,13 @@ class _homelayoutState extends State<homelayout> {
           // ),
           CurvedNavigationBar(
         items: const <Widget>[
-          Icon(Icons.home, size: 50),
-          Icon(Icons.list, size: 50),
-          Icon(Icons.perm_identity, size: 50),
+          Icon(Icons.home, size: 35),
+          Icon(Icons.list, size: 35),
+          Icon(Icons.perm_identity, size: 35),
         ],
-        color: Colors.white,
+        color: const Color.fromARGB(180, 89, 99, 76),
         buttonBackgroundColor: Colors.white,
-        backgroundColor: Color.fromARGB(255, 181, 213, 226),
+        backgroundColor: Color.fromARGB(159, 219, 211, 188),
         animationCurve: Curves.fastEaseInToSlowEaseOut,
         animationDuration: const Duration(milliseconds: 600),
         letIndexChange: (index) => true,
@@ -107,7 +126,7 @@ class _homelayoutState extends State<homelayout> {
         },
         key: _bottomNavigationKey,
         index: currentindex,
-        height: 60.0,
+        height: 45.0,
       ),
       //  bottomNavigationBar: CurvedNavigationBar(
       //   type: BottomNavigationBarType.shifting,

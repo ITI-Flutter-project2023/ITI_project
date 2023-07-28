@@ -33,10 +33,11 @@ class _Sign_upState extends State<Sign_up> {
         width: MediaQuery.of(context).size.width,
 
         decoration: BoxDecoration(
-          image: DecorationImage(
+          color: Color.fromARGB(159, 219, 211, 188),
+          /*image: DecorationImage(
             image: AssetImage('assets/background4.jpg'),
             fit: BoxFit.fill,
-          ),
+          ),*/
         ),
         child: Center(
           child: Form(
@@ -49,9 +50,9 @@ class _Sign_upState extends State<Sign_up> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Sign up page ",
+                      "Sign up  ",
                       style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                   ),
                   Padding(
@@ -60,9 +61,9 @@ class _Sign_upState extends State<Sign_up> {
                         decoration: InputDecoration(
                           labelText: "  full name",
                           labelStyle: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
+                              borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
                           if (value!.isNotEmpty) {
@@ -78,9 +79,9 @@ class _Sign_upState extends State<Sign_up> {
                         decoration: InputDecoration(
                           labelText: "  User name",
                           labelStyle: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
+                              borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
                           if (value!.isNotEmpty) {
@@ -97,9 +98,9 @@ class _Sign_upState extends State<Sign_up> {
                         decoration: InputDecoration(
                           labelText: "  Email",
                           labelStyle: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
+                              borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
                           if (value!.contains("@gmail.com")) {
@@ -127,9 +128,9 @@ class _Sign_upState extends State<Sign_up> {
                           ),
                           labelText: "  Password",
                           labelStyle: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 15,color: Color.fromARGB(215, 157, 91, 67), fontWeight: FontWeight.bold),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
+                              borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
                           if (value!.length > 7) {
@@ -157,9 +158,9 @@ class _Sign_upState extends State<Sign_up> {
                         ),
                         labelText: "  Confirm password",
                         labelStyle: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                            fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
+                            borderRadius: BorderRadius.circular(22.0)),
                       ),
                       validator: (value) {
                         if (value != passwordController.text) {
