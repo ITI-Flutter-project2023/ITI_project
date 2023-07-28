@@ -1,13 +1,31 @@
-// ignore_for_file: camel_case_types
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter/cupertino.dart';
-
-class newtaskscreen extends StatelessWidget {
-  const newtaskscreen({super.key});
+class ShowEmail extends StatefulWidget {
+  const ShowEmail({super.key});
 
   @override
+  State<ShowEmail> createState() => _ShowEmailState();
+}
+
+class _ShowEmailState extends State<ShowEmail> {
+  @override
+  void initState() {
+    super.initState();
+    getEmail();
+  }
+
+  String userEmail = "";
+  @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('',style: TextStyle( fontWeight: FontWeight.w900,
-    fontSize: 50),));
+    return Center(
+      child: Text(userEmail),
+    );
+  }
+
+  getEmail() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    userEmail = prefs.getString("email") ?? "--";
+    setState(() {});
   }
 }
