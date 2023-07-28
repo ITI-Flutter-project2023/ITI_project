@@ -30,92 +30,80 @@ class _homelayoutState extends State<homelayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(159, 219, 211, 188),
+      backgroundColor: const Color.fromARGB(159, 219, 211, 188),
       appBar: AppBar(
-        backgroundColor:Color.fromARGB(159, 219, 211, 188),
+
+        leading:
+        IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: Icon(Icons.keyboard_arrow_left
+        ),),
+        backgroundColor:const Color.fromARGB(159, 219, 211, 188),
         elevation: 0,
         title: Text(titles[currentindex]),
       ),
-      endDrawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children:  <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(159, 219, 211, 188),
+      endDrawer: Container(
+        width: 70,
+        height: 70,
+        decoration: BoxDecoration(
+          color: Color.fromARGB(180, 89, 99, 76),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Drawer(
+
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children:  <Widget>[
+              const SizedBox(
+                height: 100,
+                child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(159, 219, 211, 188),
+                  ),
+                  child: Text('Menu drawer'),
+                ),
               ),
-              child: Text('Menu drawer'),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.app_shortcut,
-                size: 50,
+              ListTile(
+
+                leading: const Icon(
+                  Icons.app_shortcut,
+                  size: 50,
+                ),
+                title: const Text('APPlication Information'),
+                onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> const Info_App()),);
+                },
               ),
-              title: Text('APPlication Information'),
-              onTap: () {
+              ListTile(
+                title: const Text('Team Name'),
+                onTap: (){
                   Navigator.push(context, MaterialPageRoute(
-                  builder: (context)=> const Info_App()),);
-              },
- 
-              
+                    builder: (context)=> const Team_name()),);
+                },
+                leading: const Icon(
+                  Icons.person,
+                  size: 50,
 
-
-            ),
-            ListTile(
-              title: Text('Team Name'),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context)=> const Team_name()),);
-              },
-              leading: Icon(
-                Icons.person,
-                size: 50,
-                
-              )
-            ),
-          ],
+                )
+              ),
+            ],
+          ),
         ),
       ),
       body: screens[currentindex],
       extendBody: false,
       bottomNavigationBar:
-          // GNav(
-          //   activeColor: Colors.white,
-          //   tabBackgroundColor: CupertinoColors.inactiveGray,
-          //   gap: 8,
-          //   selectedIndex:currentindex ,
-          //   onTabChange: (index){
-          //     setState(() {
-          //       currentindex=index;
-          //     });
-          //   },
-          //   tabs: [
-          //     GButton(
-          //       icon: Icons.home,
-          //       text: 'home',
-          //     ),
-          //     GButton(
-          //       icon: Icons.search,
-          //       text: 'search',
-          //     ),
-          //     GButton(
-          //       icon: Icons.settings,
-          //       text: 'settings',
-          //     ),
-          //   ],
-          //   color: Colors.white,
-          //   backgroundColor: Colors.pink,
-          // ),
           CurvedNavigationBar(
         items: const <Widget>[
           Icon(Icons.home, size: 35),
           Icon(Icons.list, size: 35),
           Icon(Icons.perm_identity, size: 35),
         ],
-        color: const Color.fromARGB(180, 89, 99, 76),
-        buttonBackgroundColor: Colors.white,
-        backgroundColor: Color.fromARGB(159, 219, 211, 188),
+            color: const Color.fromARGB(215, 157, 91, 67),
+            buttonBackgroundColor: Color.fromARGB(180, 89, 99, 76),
+        backgroundColor: const Color.fromARGB(159, 219, 211, 188),
         animationCurve: Curves.fastEaseInToSlowEaseOut,
         animationDuration: const Duration(milliseconds: 600),
         letIndexChange: (index) => true,
@@ -128,45 +116,7 @@ class _homelayoutState extends State<homelayout> {
         index: currentindex,
         height: 45.0,
       ),
-      //  bottomNavigationBar: CurvedNavigationBar(
-      //   type: BottomNavigationBarType.shifting,
-      //   selectedFontSize: 20,
-      //   selectedIconTheme: const IconThemeData( size: 30),
-      //   selectedItemColor: Colors.pink,
-      //   selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-      //   unselectedIconTheme: const IconThemeData(
-      //     color: Colors.black,
-      //   ),
-      //   unselectedItemColor: Colors.black,
-      //   currentIndex: currentindex,
-      //   onTap: (index){
-      //     setState(() {
-      //       currentindex=index;
-      //     });
-      //   },
-      //
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //         icon:Icon(
-      //           Icons.menu
-      //         ),
-      //       label: 'Taskes',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon:Icon(
-      //           Icons.check_circle_outline
-      //       ),
-      //       label: 'Done',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon:Icon(
-      //           Icons.archive
-      //       ),
-      //       label: 'archive',
-      //     ),
-      //
-      //   ],
-      // )
+
     );
   }
 }

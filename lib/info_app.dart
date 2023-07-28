@@ -51,11 +51,17 @@ class Info_App extends StatelessWidget {
                       ]  
                     ),
                     child:
-                     Text("We offer you an application that saves your time ,effort and money  This app (Fashion) It will facilitate our lives in the buying and selling process \n Where it offers you the ease of buying unique clothes In this application \n we will provide you with all kinds of clothes In a simple  understandable and uncomplicated presentation \n"
+                     SingleChildScrollView(
+                       child: Column(
+                         children: [
+                           Text("We offer you an application that saves your time ,effort and money  This app (Fashion) It will facilitate our lives in the buying and selling process \n Where it offers you the ease of buying unique clothes In this application \n we will provide you with all kinds of clothes In a simple  understandable and uncomplicated presentation \n"
 "and presentation that allows all people to shop through this application easily"
 "We hope that you will like this application and that it will facilitate the shopping process for you and save your time, effort and money",
-                      style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                     ),
+                         ],
+                       ),
+                     ),
           )
 
           

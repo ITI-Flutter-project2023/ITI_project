@@ -18,8 +18,11 @@ class _ShowEmailState extends State<ShowEmail> {
   String userEmail = "";
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(userEmail),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(159, 219, 211, 188),
+      body: Center(
+        child: Text(userEmail),
+      ),
     );
   }
 
