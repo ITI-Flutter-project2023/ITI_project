@@ -17,6 +17,15 @@ class Team_name extends StatelessWidget {
           child: Column(
             children:[
               SizedBox(height: 30),
+              
+                 Container(
+                  width: double.infinity,
+                  height: 30,
+                  child: Center(child: Text("Team members :-",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w100,color:Color.fromARGB(215, 157, 91, 67) ),)),
+              
+                ),
+              
+              SizedBox(height: 20),
         
               Container(
                 width: 450,
